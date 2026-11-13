@@ -1,0 +1,206 @@
+--------- beginning of events
+[ 07-16 11:24:53.101 26859:26859 I/wm_on_create_called ]
+[192677511,com.google.android.apps.cameralite.capture.CaptureActivity,performCreate,25]
+
+[ 07-16 11:24:53.151 26859:26859 I/wm_on_start_called ]
+[192677511,com.google.android.apps.cameralite.capture.CaptureActivity,handleStartActivity,49]
+
+[ 07-16 11:24:53.154 26859:26859 I/wm_on_resume_called ]
+[192677511,com.google.android.apps.cameralite.capture.CaptureActivity,RESUME_ACTIVITY,1]
+
+[ 07-16 11:24:53.191 26859:26859 I/wm_on_top_resumed_gained_called ]
+[192677511,com.google.android.apps.cameralite.capture.CaptureActivity,topStateChangedWhenResumed]
+
+[ 07-16 11:24:53.247 26859:26859 I/viewroot_draw_event ]
+[VRI[CaptureActivity],Canceling draw. cancelDueToPreDrawListener=true cancelDueToSync=false]
+
+[ 07-16 11:24:53.259 26859:26859 I/viewroot_draw_event ]
+[VRI[CaptureActivity],Draw frame after cancel]
+
+[ 07-16 11:24:53.300 26859:26859 I/viewroot_draw_event ]
+[VRI[CaptureActivity],reportDrawFinished seqId=0]
+
+[ 07-16 11:24:53.622 26859:26954 I/jank_cuj_events_end_request ]
+[81,1784190293622049000,23897872794050,14559833083174]
+
+[ 07-16 11:24:53.877 26859:26859 I/viewroot_draw_event ]
+[VRI[CaptureActivity],Canceling draw. cancelDueToPreDrawListener=true cancelDueToSync=false]
+
+[ 07-16 11:24:53.919 26859:26859 I/viewroot_draw_event ]
+[VRI[CaptureActivity],Draw frame after cancel]
+
+[ 07-16 11:24:53.947 26859:26859 I/viewroot_draw_event ]
+[VRI[CaptureActivity],reportDrawFinished seqId=0]
+
+[ 07-16 11:24:53.968 26859:26859 I/viewroot_draw_event ]
+[VRI[CaptureActivity],reportDrawFinished seqId=0]
+
+[ 07-16 11:24:54.065 26859:26859 I/viewroot_draw_event ]
+[VRI[CaptureActivity],reportDrawFinished seqId=0]
+
+[ 07-16 11:24:58.366 26859:26859 I/wm_on_top_resumed_lost_called ]
+[192677511,com.google.android.apps.cameralite.capture.CaptureActivity,topStateChangedWhenResumed]
+
+[ 07-16 11:24:58.442 26859:26859 I/view_enqueue_input_event ]
+[Motion - Cancel,org.codeaurora.snapcam/com.google.android.apps.cameralite.capture.CaptureActivity]
+
+[ 07-16 11:24:58.459 26859:26859 I/wm_on_paused_called ]
+[192677511,com.google.android.apps.cameralite.capture.CaptureActivity,performPause,9]
+
+[ 07-16 11:24:59.174 26859:26859 I/viewroot_draw_event ]
+[VRI[CaptureActivity],applyTransactionOnDraw applyImmediately]
+
+[ 07-16 11:24:59.175 26859:26859 I/viewroot_draw_event ]
+[VRI[CaptureActivity],applyTransactionOnDraw applyImmediately]
+
+[ 07-16 11:24:59.176 26859:26859 I/viewroot_draw_event ]
+[VRI[CaptureActivity],Not drawing due to not visible. Reason=!mAppVisible && !mForceDecorViewVisibility]
+
+[ 07-16 11:24:59.203 26859:26859 I/wm_on_stop_called ]
+[192677511,com.google.android.apps.cameralite.capture.CaptureActivity,STOP_ACTIVITY_ITEM,21]
+
+[ 07-16 11:24:59.216 26859:26859 I/viewroot_draw_event ]
+[VRI[CaptureActivity],applyTransactionOnDraw applyImmediately]
+
+--------- beginning of main
+[ 07-16 11:25:00.430 27006:27006 I/CameraManagerGlobal ]
+Connecting to camera service
+
+[ 07-16 11:25:00.434 27006:27031 E/eaurora.snapcam ]
+hiddenapi: Accessing hidden field Ljava/util/Collections$SynchronizedCollection;->mutex:Ljava/lang/Object; (runtime_flags=0, domain=core-platform, api=max-target-o) from Lj$/util/DesugarCollections; (domain=app, TargetSdkVersion=32) using reflection: denied
+
+[ 07-16 11:25:00.435 27006:27031 E/eaurora.snapcam ]
+hiddenapi: Accessing hidden method Ljava/util/Collections$SynchronizedSet;-><init>(Ljava/util/Set;Ljava/lang/Object;)V (runtime_flags=0, domain=core-platform, api=max-target-o) from Lj$/util/DesugarCollections; (domain=app, TargetSdkVersion=32) using reflection: denied
+
+[ 07-16 11:25:00.435 27006:27031 E/eaurora.snapcam ]
+hiddenapi: Accessing hidden method Ljava/util/Collections$SynchronizedCollection;-><init>(Ljava/util/Collection;Ljava/lang/Object;)V (runtime_flags=0, domain=core-platform, api=max-target-o) from Lj$/util/DesugarCollections; (domain=app, TargetSdkVersion=32) using reflection: denied
+
+[ 07-16 11:25:00.449 27006:27006 E/TEST_getBit [ID = 0] ]
+OK
+
+[ 07-16 11:25:00.449 27006:27006 E/TEST_colorFilterArrangement [ID = 0] ]
+OK because = 2
+
+[ 07-16 11:25:00.449 27006:27006 E/TEST_and_ADD_android.lens.facing [ID = 0] ]
+OK
+
+[ 07-16 11:25:00.449 27006:27006 E/TEST_and_ADD_android.control.aeAvailableModes [ID = 0] ]
+OK
+
+[ 07-16 11:25:00.449 27006:27006 E/TEST_and_ADD_android.lens.info.availableFocalLengths [ID = 0] ]
+OK
+
+[ 07-16 11:25:00.449 27006:27006 E/TEST_and_ADD_android.lens.info.availableApertures [ID = 0] ]
+OK
+
+[ 07-16 11:25:00.449 27006:27006 E/TEST_and_ADD_android.sensor.info.physicalSize [ID = 0] ]
+OK
+
+[ 07-16 11:25:00.449 27006:27006 E/ALL_TEST [ID = 0] ]
+PASSED
+
+[ 07-16 11:25:00.451 27006:27006 E/TEST_getBit [ID = 1] ]
+OK
+
+[ 07-16 11:25:00.451 27006:27006 E/TEST_colorFilterArrangement [ID = 1] ]
+OK because = 3
+
+[ 07-16 11:25:00.451 27006:27006 E/TEST_and_ADD_android.lens.facing [ID = 1] ]
+OK
+
+[ 07-16 11:25:00.451 27006:27006 E/TEST_and_ADD_android.control.aeAvailableModes [ID = 1] ]
+OK
+
+[ 07-16 11:25:00.451 27006:27006 E/TEST_and_ADD_android.lens.info.availableFocalLengths [ID = 1] ]
+OK
+
+[ 07-16 11:25:00.451 27006:27006 E/TEST_and_ADD_android.lens.info.availableApertures [ID = 1] ]
+OK
+
+[ 07-16 11:25:00.451 27006:27006 E/TEST_and_ADD_android.sensor.info.physicalSize [ID = 1] ]
+OK
+
+[ 07-16 11:25:00.452 27006:27006 E/ALL_TEST [ID = 1] ]
+PASSED
+
+[ 07-16 11:25:00.482 27006:27006 E/FOUND_LENSES ]
+ [ 0 1 ]
+
+[ 07-16 11:25:00.482 27006:27006 E/AFTER_BLACK_LIST_LENSES ]
+ [ 0 1 ]
+
+[ 07-16 11:25:00.482 27006:27006 E/SORTS_LENSES ]
+ [ 0 1 ]
+
+[ 07-16 11:25:00.482 27006:27006 E/AFTER_HIDING_LENSES ]
+ [ 0 1 ]
+
+[ 07-16 11:25:00.482 27006:27006 E/TOGGLE_DISTRIBUTION_BACK_LENSES ]
+ [ 0 ]
+
+[ 07-16 11:25:00.483 27006:27006 E/TOGGLE_DISTRIBUTION_FRONT_LENSES ]
+ [ 1 ]
+
+[ 07-16 11:25:00.484 27006:27006 I/ProcessingMediaProvider ]
+ProcessingMediaProvider On Create
+
+
+[ 07-16 11:25:00.489 27006:27006 I/XmlConfigValuesParser ]
+Parsed camera entries: {}
+
+
+[ 07-16 11:25:00.502 27006:27006 I/SystemFeatureFlagsExper ]
+Received BASE override version: 0
+
+
+[ 07-16 11:25:00.502 27006:27006 I/SystemFeatureFlagsExper ]
+Received HDR override: 2
+
+
+[ 07-16 11:25:00.503 27006:27006 I/SystemFeatureFlagsExper ]
+Received NIGHT override: 2
+
+
+[ 07-16 11:25:00.503 27006:27006 I/SystemFeatureFlagsExper ]
+Received SNAP override: 2
+
+
+[ 07-16 11:25:00.511 27006:27025 D/pck      ]
+Configured: Config{closeImmediately=false, foregroundTimeoutMillis=1000}
+
+[ 07-16 11:25:00.511 27006:27006 I/hag      ]
+SslGuard completed installation.
+
+[ 07-16 11:25:00.512 27006:27025 I/PixelCameraKitProviderI ]
+getInstance: 4 ms UI false
+
+
+[ 07-16 11:25:00.520 27006:27025 I/CXCP     ]
+Loaded metadata for Camera 0 in 6.907 ms
+
+[ 07-16 11:25:00.521 27006:27038 I/PixelCameraKitProviderI ]
+getInstance: 0 ms UI false
+
+
+[ 07-16 11:25:00.522 27006:27038 I/CameraliteCameraKitModu ]
+Direct access to the PCK CameraHardwareManager is deprecated. See comments in module for alternatives.
+
+
+[ 07-16 11:25:00.523 27006:27038 I/PixelCameraKitProviderI ]
+getInstance: 0 ms UI false
+
+
+[ 07-16 11:25:00.524 27006:27038 I/CameraliteCameraKitModu ]
+Direct access to the PCK CameraHardwareManager is deprecated. See comments in module for alternatives.
+
+
+--------- beginning of system
+[ 07-16 11:25:00.530 27006:27025 D/TranClassInfo ]
+instance successfully. com.transsion.hubcore.hardware.camera2.impl.TranCameraMetadataNativeImpl@d2be35f from com.transsion.hubcore.hardware.camera2.impl.ITranCameraMetadataNative
+
+[ 07-16 11:25:00.535 27006:27025 D/TranClassInfo ]
+instance successfully. com.transsion.hubcore.hardware.camera2.params.TranStreamConfigurationMapImpl@8adca44 from com.transsion.hubcore.hardware.camera2.params.ITranStreamConfigurationMap
+
+[ 07-16 11:25:00.539 27006:27025 D/TranStreamConfigurationMapExt ]
+loadAppInfoFromXML 13
+
