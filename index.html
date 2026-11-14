@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A1020">
+
 <title>Keroles Maged: Web Developer</title>
+<meta name="description" content="Keroles Maged, web developer. Frontend development, full-stack applications, backend API integration, and website improvement.">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#F3F5FA; --ink:#0F1730; --muted:#54607E; --glass:rgba(255,255,255,.7); --edge:rgba(15,23,48,.12);
-  --a:#A9741A; --b:#3F4FD8; --c:#B65A72; --blob:.2;
+  --a:#A9741A; --b:#3F4FD8; --c:#B65A72; --blob:.2; --dot:rgba(15,23,48,.16);
   --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
   --body:"Instrument Sans","Segoe UI",system-ui,sans-serif;
   color-scheme:light; box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
 }
 @media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){--bg:#0A1020;--ink:#F3EEE3;--muted:#9AA3BD;--glass:rgba(255,255,255,.05);--edge:rgba(231,214,170,.16);--a:#D9B26F;--b:#8C9BFF;--c:#E9A9B4;--blob:.32;color-scheme:dark}
+  :root:not([data-theme="light"]){--bg:#0A1020;--ink:#F3EEE3;--muted:#9AA3BD;--glass:rgba(255,255,255,.05);--edge:rgba(231,214,170,.16);--a:#D9B26F;--b:#8C9BFF;--c:#E9A9B4;--blob:.26;--dot:rgba(231,214,170,.17);color-scheme:dark}
 }
-:root[data-theme="dark"]{--bg:#0A1020;--ink:#F3EEE3;--muted:#9AA3BD;--glass:rgba(255,255,255,.05);--edge:rgba(231,214,170,.16);--a:#D9B26F;--b:#8C9BFF;--c:#E9A9B4;--blob:.32;color-scheme:dark}
+:root[data-theme="dark"]{--bg:#0A1020;--ink:#F3EEE3;--muted:#9AA3BD;--glass:rgba(255,255,255,.05);--edge:rgba(231,214,170,.16);--a:#D9B26F;--b:#8C9BFF;--c:#E9A9B4;--blob:.26;--dot:rgba(231,214,170,.17);color-scheme:dark}
 html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
 *,*::before,*::after{box-sizing:inherit}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.05rem;line-height:1.6;overflow-x:hidden;position:relative}
@@ -27,11 +30,6 @@ a{color:inherit}
 
 /* aurora + cursor light */
 .bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
-.blob{position:absolute;border-radius:50%;will-change:transform;opacity:var(--blob);animation:drift 18s ease-in-out infinite alternate}
-.blob.a{width:55vmax;height:55vmax;background:radial-gradient(circle,var(--a),transparent 68%);top:-20vmax;left:-15vmax}
-.blob.b{width:45vmax;height:45vmax;background:radial-gradient(circle,var(--b),transparent 68%);bottom:-18vmax;right:-12vmax;animation-duration:23s}
-.blob.c{width:32vmax;height:32vmax;background:radial-gradient(circle,var(--c),transparent 68%);top:35%;left:48%;animation-duration:27s;opacity:calc(var(--blob) * .7)}
-@keyframes drift{to{transform:translate(8vmax,6vmax) scale(1.2)}}
 .spot{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(520px circle at var(--mx,50%) var(--my,30%),color-mix(in srgb,var(--a) 22%,transparent),transparent 70%)}
 
 header .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:1.25rem;padding-bottom:1.25rem;gap:1rem;flex-wrap:wrap}
@@ -77,7 +75,6 @@ h1 .l{display:inline-block;animation:rise .9s cubic-bezier(.2,.8,.2,1) both;anim
 @keyframes orb2{from{transform:rotateY(72deg) rotateZ(0)}to{transform:rotateY(72deg) rotateZ(360deg)}}
 
 /* particles, progress, intro curtain */
-.net{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
 .prog{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;height:4px;z-index:40;transform-origin:left;transform:scaleX(0);background:linear-gradient(90deg,var(--a),var(--b),var(--c))}
 .curtain{position:fixed;inset:0;z-index:60;display:none}
 .js .curtain{display:flex}
@@ -120,19 +117,104 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,6vw,3.4rem);l
 @keyframes sheen{60%,100%{transform:translateX(100%)}}
 .slot:hover{transform:rotate(-2deg) scale(1.03)}
 .note{color:var(--muted);max-width:52ch;margin:0}
-.about{font-family:var(--display);font-weight:500;font-size:clamp(1.4rem,3.6vw,2.2rem);line-height:1.25;max-width:28ch;margin:0}
+.about{font-family:var(--display);font-weight:500;font-size:clamp(1.2rem,2.8vw,1.75rem);line-height:1.35;max-width:38ch;margin:0 0 1.5rem}
 .links{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.5rem}
 footer{margin-top:5rem;padding:2rem 0 3rem;color:var(--muted);font-size:.95rem;border-top:1.5px solid var(--edge);position:relative;z-index:1}
 
 .js .rv{opacity:0;translate:0 40px;transition:opacity .8s,translate .8s cubic-bezier(.2,.9,.3,1)}
 .js .rv.in{opacity:1;translate:0 0}
+/* background */
+.glow{position:absolute;border-radius:50%;opacity:var(--blob);will-change:transform}
+.g1{width:70vmax;height:70vmax;top:-38vmax;left:50%;margin-left:-35vmax;background:radial-gradient(circle,var(--a),transparent 62%);animation:breathe 14s ease-in-out infinite alternate}
+.g2{width:60vmax;height:60vmax;bottom:-40vmax;right:-20vmax;background:radial-gradient(circle,var(--b),transparent 62%);opacity:calc(var(--blob) * .8)}
+.grid{position:absolute;inset:0;background-image:radial-gradient(var(--dot) 1.2px,transparent 1.5px);background-size:30px 30px;-webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 25%,#000,transparent 75%);mask-image:radial-gradient(ellipse 80% 60% at 50% 25%,#000,transparent 75%)}
+@keyframes breathe{to{transform:scale(1.12) translateY(3vmax)}}
+.card:nth-child(4){--k:var(--b)}
+.stack{border-top:1.5px solid var(--edge)}
+.row{display:grid;grid-template-columns:minmax(120px,230px) 1fr;gap:1rem;align-items:center;padding:1.2rem 0;border-bottom:1.5px solid var(--edge)}
+.row h3{font-family:var(--display);font-weight:800;font-size:1.25rem;margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chips span{padding:.4rem .95rem;border-radius:999px;border:1.5px solid var(--edge);background:var(--glass);font-size:.95rem;font-weight:600;transition:transform .25s,border-color .25s,color .25s}
+.chips span:hover{transform:translateY(-3px);border-color:var(--a);color:var(--a)}
+.slot h3{font-family:var(--display);font-weight:800;font-size:1.35rem;margin:0}
+.slot p{margin:.15rem 0 0;color:var(--muted);font-weight:400}
+.about-p{max-width:62ch;color:var(--muted);font-size:1.1rem;margin:0}
+.srows{border-top:1.5px solid var(--edge)}
+.srow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:1.5rem;padding:1.7rem 0;border-bottom:1.5px solid var(--edge);position:relative;transition:padding .35s cubic-bezier(.2,.9,.3,1)}
+.srow::before{content:"";position:absolute;left:0;bottom:-1.5px;height:2px;width:0;background:linear-gradient(90deg,var(--a),var(--b));transition:width .5s}
+.srow:hover{padding-left:1rem}.srow:hover::before{width:100%}
+.srow h3{font-family:var(--display);font-weight:800;font-size:clamp(1.4rem,3.4vw,2.1rem);line-height:1.1;letter-spacing:-.02em;margin:0}
+.srow p{margin:0;color:var(--muted);align-self:center}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:2rem}
+.col{border-top:4px solid var(--k,var(--a));padding-top:1rem}
+.col:nth-child(2){--k:var(--b)}.col:nth-child(3){--k:var(--c)}
+.col h3{font-family:var(--display);font-weight:800;font-size:1.5rem;margin:0 0 .8rem}
+.col ul{list-style:none;margin:0;padding:0}
+.col li{padding:.45rem 0;border-bottom:1px solid var(--edge);color:var(--muted);transition:color .2s,padding .25s}
+.col li:hover{color:var(--ink);padding-left:.5rem}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:1.25rem;margin-bottom:1.5rem}
+.shot{border:1.5px solid var(--edge);border-radius:1rem;overflow:hidden;background:var(--glass);transition:transform .3s cubic-bezier(.2,1.4,.4,1)}
+.shot:hover{transform:translateY(-6px)}
+.bar{display:flex;gap:.4rem;padding:.7rem .9rem;border-bottom:1.5px solid var(--edge)}
+.bar i{width:9px;height:9px;border-radius:50%;background:var(--edge)}
+.bar i:nth-child(1){background:var(--c)}.bar i:nth-child(2){background:var(--a)}.bar i:nth-child(3){background:var(--b)}
+.body{position:relative;min-height:10rem;padding:1.1rem;display:flex;align-items:flex-end;font-weight:600;overflow:hidden;
+  background:linear-gradient(var(--edge),var(--edge)) 1.1rem 1.1rem/55% 10px no-repeat,linear-gradient(var(--edge),var(--edge)) 1.1rem 2.1rem/35% 10px no-repeat}
+.body::before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,color-mix(in srgb,var(--b) 26%,transparent) 50%,transparent 70%);transform:translateX(-100%);animation:sheen 3s ease-in-out infinite}
+.shot:nth-child(2) .body::before{animation-delay:.5s}.shot:nth-child(3) .body::before{animation-delay:1s}
+@media (max-width:700px){.srow{grid-template-columns:1fr;gap:.5rem}}
+@property --ang{syntax:"<angle>";inherits:false;initial-value:0deg}
+.tcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:1.1rem}
+.tcard{--k:var(--a);position:relative;isolation:isolate;padding:1.6rem;min-height:15rem;border-radius:1.5rem;background:var(--glass);border:1.5px solid var(--edge);overflow:hidden;transition:transform .35s cubic-bezier(.2,1.4,.4,1)}
+.tcard:nth-child(2){--k:var(--b)}.tcard:nth-child(3){--k:var(--c)}
+.tcard::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:2px;background:conic-gradient(from var(--ang),transparent 0 60%,var(--k) 85%,transparent);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);opacity:0;transition:opacity .3s;pointer-events:none}
+.tcard:hover{transform:translateY(-8px)}
+.tcard:hover::before{opacity:1;animation:ang 3s linear infinite}
+@keyframes ang{to{--ang:360deg}}
+.tcard .mark{position:absolute;right:1.2rem;top:.6rem;z-index:-1;font:800 4.5rem/1 var(--display);color:var(--k);opacity:.13;transition:opacity .3s,transform .5s cubic-bezier(.2,1.4,.4,1)}
+.tcard:hover .mark{opacity:.3;transform:rotate(-8deg) scale(1.1)}
+.tcard h3{font-family:var(--display);font-weight:800;font-size:1.6rem;margin:0 0 1.2rem;display:flex;align-items:center;gap:.6rem}
+.tcard h3::before{content:"";width:.7rem;height:.7rem;border-radius:50%;background:var(--k);box-shadow:0 0 14px var(--k)}
+.tcard .chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.tcard .chips span{padding:.4rem .9rem;border-radius:999px;border:1.5px solid var(--edge);background:var(--glass);font-size:.95rem;font-weight:600;transition:transform .25s cubic-bezier(.2,1.5,.4,1),background .25s,color .25s,border-color .25s}
+.tcard .chips span:hover{transform:translateY(-3px) scale(1.06);background:var(--k);border-color:var(--k);color:var(--bg)}
+.tcard.in .chips span{animation:chipin .55s cubic-bezier(.2,1.5,.4,1) backwards;animation-delay:calc(.25s + var(--i) * 70ms)}
+@keyframes chipin{from{opacity:0;transform:translateY(10px) scale(.85)}}
+@media (prefers-reduced-motion:reduce){.tcard.in .chips span,.tcard:hover::before{animation:none}.tcard{transition:none}}
+.scards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:1.1rem}
+.scard{min-height:0}
+.scard:nth-child(4){--k:var(--b)}
+.scard h3{margin-bottom:.4rem}
+.scard p{margin:0;color:var(--muted);line-height:1.55}
+.viz{height:4rem;margin-bottom:1.3rem}
+.v-ui{display:flex;gap:.5rem;align-items:flex-end}
+.v-ui i{flex:1;border-radius:.45rem;background:linear-gradient(var(--k),color-mix(in srgb,var(--k) 22%,transparent));animation:bars 2.4s ease-in-out infinite alternate;animation-delay:var(--d)}
+@keyframes bars{from{height:30%}to{height:100%}}
+.v-fs{display:flex;align-items:center}
+.v-fs .n{flex:none;width:2.6rem;height:2.6rem;border-radius:.75rem;border:2px solid var(--k);background:color-mix(in srgb,var(--k) 16%,transparent)}
+.v-fs .ln{flex:1;height:2px;margin:0 .4rem;background:var(--edge);position:relative}
+.v-fs .ln::after{content:"";position:absolute;top:-4px;left:0;width:10px;height:10px;border-radius:50%;background:var(--k);box-shadow:0 0 12px var(--k);animation:travel 2s ease-in-out infinite alternate}
+@keyframes travel{to{left:calc(100% - 10px)}}
+.v-api{display:flex;align-items:center;gap:.6rem;font:700 .95rem ui-monospace,SFMono-Regular,Menlo,monospace}
+.v-api code{padding:.4rem .75rem;border-radius:.55rem;border:1.5px solid var(--edge);background:var(--glass);font:inherit}
+.v-api em{font-style:normal;padding:.4rem .75rem;border-radius:.55rem;background:var(--k);color:var(--bg);animation:ping 2s ease-in-out infinite}
+@keyframes ping{50%{opacity:.55;transform:scale(.95)}}
+.v-up{display:flex;flex-direction:column;justify-content:center;gap:.6rem}
+.v-up i{display:block;height:.6rem;border-radius:99px;background:var(--edge);position:relative;overflow:hidden}
+.v-up i::after{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--k);transform-origin:left;animation:fill 2.8s cubic-bezier(.6,0,.2,1) infinite alternate;animation-delay:calc(var(--j) * .35s)}
+@keyframes fill{from{transform:scaleX(.2)}to{transform:scaleX(1)}}
+@media (prefers-reduced-motion:reduce){.viz *,.viz *::after{animation:none}}
+.hd{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.sub{color:var(--muted);max-width:50ch;margin:-1rem 0 2rem}
+.cards.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}
+.card p{line-height:1.55}
 @media (max-width:760px){
   .hero{grid-template-columns:1fr;gap:3rem;padding-top:1rem}
   .scene{width:min(78%,300px)}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .blob,h1 .l,.typed,.caret,.cube,.orbit,.band div,.slot::before,.hero .lead,.hero .cta,.scene{animation:none}
+  .glow,h1 .l,.typed,.caret,.cube,.orbit,.band div,.slot::before,.body::before,.hero .lead,.hero .cta,.scene{animation:none}
   .js .curtain{display:none}
   .js .rv{translate:0 0;filter:none}
   .tilt,.card,.btn{transition:none}
@@ -140,16 +222,15 @@ footer{margin-top:5rem;padding:2rem 0 3rem;color:var(--muted);font-size:.95rem;b
 </style>
 </head>
 <body>
-<div class="bg" aria-hidden="true"><div class="blob a"></div><div class="blob b"></div><div class="blob c"></div></div>
+<div class="bg" aria-hidden="true"><div class="glow g1"></div><div class="glow g2"></div><div class="grid"></div></div>
 <div class="spot" aria-hidden="true"></div>
-<canvas id="net" class="net" aria-hidden="true"></canvas>
 <div class="prog" id="prog"></div>
 <div class="curtain" id="curtain" aria-hidden="true"><i></i><i></i><i></i><b>Keroles Maged</b></div>
 
 <header>
   <div class="wrap">
     <strong>Keroles Maged</strong>
-    <nav aria-label="Main"><a href="#work">What I build</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+    <div class="hd"><nav aria-label="Main"><a href="#skills">Skills</a><a href="#stack">Stack</a><a href="#projects">Work</a><a href="#about">About</a><a href="#contact">Contact</a></nav></div>
   </div>
 </header>
 
@@ -160,7 +241,7 @@ footer{margin-top:5rem;padding:2rem 0 3rem;color:var(--muted);font-size:.95rem;b
       <p class="lead"><span class="typed" id="typed">I build fast websites.</span><span class="caret" aria-hidden="true"></span></p>
       <div class="cta">
         <a class="btn primary" href="#contact">Get in touch</a>
-        <a class="btn" href="#projects">See projects</a>
+        <a class="btn" href="#projects">View selected work</a>
       </div>
     </div>
     <div class="scene" aria-hidden="true">
@@ -175,46 +256,54 @@ footer{margin-top:5rem;padding:2rem 0 3rem;color:var(--muted);font-size:.95rem;b
   </div>
 
   <div class="band" aria-hidden="true">
-    <div>
-      <span>Fast</span><span>Responsive</span><span>Clean code</span><span>Easy to use</span>
-      <span>Fast</span><span>Responsive</span><span>Clean code</span><span>Easy to use</span>
-      <span>Fast</span><span>Responsive</span><span>Clean code</span><span>Easy to use</span>
-      <span>Fast</span><span>Responsive</span><span>Clean code</span><span>Easy to use</span>
-    </div>
+    <div><span>Frontend</span><span>Full-stack</span><span>API integration</span><span>Performance</span><span>Frontend</span><span>Full-stack</span><span>API integration</span><span>Performance</span><span>Frontend</span><span>Full-stack</span><span>API integration</span><span>Performance</span><span>Frontend</span><span>Full-stack</span><span>API integration</span><span>Performance</span></div>
   </div>
 
   <div class="wrap">
-    <section id="work">
-      <h2 class="rv">What I build</h2>
-      <div class="cards">
-        <div class="card rv"><h3>Fast</h3><p>Pages that load quickly, even on a slow connection.</p></div>
-        <div class="card rv"><h3>Responsive</h3><p>Layouts that look right on phones, tablets, and desktops.</p></div>
-        <div class="card rv"><h3>Easy to maintain</h3><p>Clean code that’s simple to update later.</p></div>
+    <section id="skills">
+      <h2 class="rv">How I can contribute</h2>
+      <p class="sub rv">Practical development support, from shaping an interface to building and improving the application behind it.</p>
+      <div class="scards">
+        <div class="tcard scard rv"><div class="viz v-ui" aria-hidden="true"><i style="--d:0s"></i><i style="--d:.5s"></i><i style="--d:1s"></i><i style="--d:.25s"></i></div><h3>Frontend development</h3><p>Responsive, accessible interfaces built with modern JavaScript, React, and Tailwind CSS.</p></div>
+        <div class="tcard scard rv"><div class="viz v-fs" aria-hidden="true"><i class="n"></i><i class="ln"></i><i class="n"></i></div><h3>Full-stack applications</h3><p>Web application features that connect clear user experiences with dependable backend logic and data.</p></div>
+        <div class="tcard scard rv"><div class="viz v-api" aria-hidden="true"><code>GET /api</code><em>200 OK</em></div><h3>Backend &amp; API integration</h3><p>Server-side functionality, REST API integration, authentication flows, and database-connected features.</p></div>
+        <div class="tcard scard rv"><div class="viz v-up" aria-hidden="true"><i style="--j:0"></i><i style="--j:1"></i><i style="--j:2"></i></div><h3>Website improvement</h3><p>Responsive redesigns, usability refinements, performance-minded updates, and ongoing maintenance.</p></div>
+      </div>
+    </section>
+
+    <section id="stack">
+      <h2 class="rv">Tools &amp; technologies</h2>
+      <p class="sub rv">A growing toolkit for building across the modern web. The right tool depends on the product, requirements, and team.</p>
+      <div class="tcards">
+        <div class="tcard rv"><span class="mark" aria-hidden="true">&lt;/&gt;</span><h3>Frontend</h3><div class="chips"><span style="--i:0">HTML</span><span style="--i:1">CSS</span><span style="--i:2">JavaScript</span><span style="--i:3">React</span><span style="--i:4">Tailwind CSS</span></div></div>
+        <div class="tcard rv"><span class="mark" aria-hidden="true">{ }</span><h3>Backend</h3><div class="chips"><span style="--i:0">Node.js</span><span style="--i:1">Express</span><span style="--i:2">PHP</span><span style="--i:3">Laravel</span><span style="--i:4">Python</span><span style="--i:5">REST APIs</span></div></div>
+        <div class="tcard rv"><span class="mark" aria-hidden="true">[ ]</span><h3>Data &amp; workflow</h3><div class="chips"><span style="--i:0">MongoDB</span><span style="--i:1">MySQL</span><span style="--i:2">Firebase</span><span style="--i:3">Git</span><span style="--i:4">Docker</span></div></div>
       </div>
     </section>
 
     <section id="projects">
-      <h2 class="rv">Projects</h2>
-      <div class="slots rv">
-        <div class="slot">Web project coming soon</div>
-        <div class="slot">Web project coming soon</div>
-        <div class="slot">Web project coming soon</div>
+      <h2 class="rv">Selected work</h2>
+      <div class="shots rv">
+        <div class="shot"><div class="bar"><i></i><i></i><i></i></div><div class="body">First case study in progress</div></div>
+        <div class="shot"><div class="bar"><i></i><i></i><i></i></div><div class="body">New build coming soon</div></div>
+        <div class="shot"><div class="bar"><i></i><i></i><i></i></div><div class="body">More work to be published</div></div>
       </div>
-      <p class="note rv">My first projects are on the way. Get in touch if you’d like to work on one together.</p>
+      <p class="note rv">I’m currently developing and documenting my projects. This section will feature real builds, the problems they solve, and the thinking behind the implementation—no placeholder case studies or invented results.</p>
     </section>
 
     <section id="about">
       <h2 class="rv">About</h2>
-      <p class="about rv">I’m Keroles, a web developer. I build sites that load fast, look good on every screen, and are simple to use.</p>
+      <p class="about rv">I’m Keroles Maged, a web developer interested in turning ideas and requirements into useful, well-crafted digital products. My work focuses on clean interfaces, maintainable code, and the connection between frontend experiences and backend functionality. I value clear communication, thoughtful problem-solving, and continuous learning—and I aim to deliver work that is practical, reliable, and easy to build on.</p>
+      <p class="about-p rv">I’m open to collaborating with individuals and teams on websites, web application features, and improvement projects.</p>
     </section>
 
     <section id="contact">
       <h2 class="rv">Let’s build something</h2>
-      <p class="note rv">I’m open to job opportunities, collaborations, and freelance work.</p>
+      <p class="note rv">Have a website idea, a feature to build, or an existing product that needs improvement? I’d be glad to discuss the scope, priorities, and next steps.</p>
       <div class="links rv">
         <a class="btn primary" href="mailto:kerolesnarooz@gmail.com">kerolesnarooz@gmail.com</a>
         <a class="btn" href="https://www.linkedin.com/in/keroles-maged-915438375" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn" href="https://github.com/keroo-maged" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://github.com/keroles-maged" target="_blank" rel="noopener">GitHub</a>
       </div>
     </section>
   </div>
@@ -263,30 +352,6 @@ if(!reduce&&fine){
     c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();
       c.style.setProperty('--cx',(e.clientX-r.left)+'px');c.style.setProperty('--cy',(e.clientY-r.top)+'px');});
   });
-}
-
-/* particle network */
-var cv=document.getElementById('net');
-if(!reduce&&cv.getContext&&fine&&innerWidth>900){
-  var g=cv.getContext('2d'),W,H,P=[],mx=-999,my=-999;
-  var size=function(){W=cv.width=innerWidth;H=cv.height=innerHeight;P=[];
-    for(var i=0,n=Math.min(70,Math.round(W/16));i<n;i++)P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.45,vy:(Math.random()-.5)*.45});};
-  size();addEventListener('resize',size);
-  addEventListener('pointermove',function(e){mx=e.clientX;my=e.clientY});
-  (function frame(){
-    g.clearRect(0,0,W,H);
-    var col=getComputedStyle(root).getPropertyValue('--b').trim()||'#2fd3f0';
-    g.fillStyle=col;g.strokeStyle=col;
-    P.forEach(function(p,i){
-      p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
-      var dx=p.x-mx,dy=p.y-my,dd=Math.sqrt(dx*dx+dy*dy)||1;
-      if(dd<150){p.x+=dx/dd*1.4;p.y+=dy/dd*1.4;}
-      g.globalAlpha=.75;g.beginPath();g.arc(p.x,p.y,1.8,0,6.283);g.fill();
-      for(var j=i+1;j<P.length;j++){var q=P[j],ax=p.x-q.x,ay=p.y-q.y,ad=ax*ax+ay*ay;
-        if(ad<15000){g.globalAlpha=(1-ad/15000)*.4;g.beginPath();g.moveTo(p.x,p.y);g.lineTo(q.x,q.y);g.stroke();}}
-    });
-    requestAnimationFrame(frame);
-  })();
 }
 
 /* scroll progress + intro cleanup */
