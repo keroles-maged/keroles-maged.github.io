@@ -27,10 +27,10 @@ a{color:inherit}
 
 /* aurora + cursor light */
 .bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
-.blob{position:absolute;border-radius:50%;will-change:transform;opacity:var(--blob);animation:drift 18s ease-in-out infinite alternate}
-.blob.a{width:55vmax;height:55vmax;background:radial-gradient(circle,var(--a),transparent 68%);top:-20vmax;left:-15vmax}
-.blob.b{width:45vmax;height:45vmax;background:radial-gradient(circle,var(--b),transparent 68%);bottom:-18vmax;right:-12vmax;animation-duration:23s}
-.blob.c{width:32vmax;height:32vmax;background:radial-gradient(circle,var(--c),transparent 68%);top:35%;left:48%;animation-duration:27s;opacity:calc(var(--blob) * .7)}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:var(--blob);animation:drift 18s ease-in-out infinite alternate}
+.blob.a{width:55vmax;height:55vmax;background:var(--a);top:-20vmax;left:-15vmax}
+.blob.b{width:45vmax;height:45vmax;background:var(--b);bottom:-18vmax;right:-12vmax;animation-duration:23s}
+.blob.c{width:32vmax;height:32vmax;background:var(--c);top:35%;left:48%;animation-duration:27s;opacity:calc(var(--blob) * .7)}
 @keyframes drift{to{transform:translate(8vmax,6vmax) scale(1.2)}}
 .spot{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(520px circle at var(--mx,50%) var(--my,30%),color-mix(in srgb,var(--a) 22%,transparent),transparent 70%)}
 
@@ -46,7 +46,7 @@ h1{font-family:var(--display);font-weight:800;font-size:clamp(2.7rem,8.5vw,5.6re
 h1 .w{display:inline-block;white-space:nowrap}
 h1 .l{display:inline-block;animation:rise 1s cubic-bezier(.2,1.5,.4,1) both,bob 3.4s ease-in-out infinite;animation-delay:calc(1.5s + var(--i) * 60ms),calc(2.8s + var(--i) * 110ms);transition:color .2s,translate .35s cubic-bezier(.2,1.4,.4,1)}
 h1 .l:hover{color:var(--k)}
-@keyframes rise{from{opacity:0;transform:translateY(.8em) rotate(8deg)}to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(.8em) rotate(8deg);filter:blur(8px)}to{opacity:1;transform:none;filter:none}}
 @keyframes bob{0%,100%{rotate:-2.5deg}50%{rotate:2.5deg}}
 .lead{font-family:var(--display);font-weight:800;font-size:clamp(1.3rem,3.6vw,2rem);line-height:1.2;margin:0 0 2rem;min-height:2.5em}
 .typed{background:linear-gradient(90deg,var(--a),var(--b),var(--c),var(--a));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:flow 6s linear infinite}
@@ -54,7 +54,7 @@ h1 .l:hover{color:var(--k)}
 .caret{display:inline-block;width:3px;height:1em;background:var(--b);margin-left:3px;vertical-align:-.12em;animation:blink 1s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
 .cta{display:flex;gap:.75rem;flex-wrap:wrap}
-.btn{display:inline-block;padding:.9rem 1.6rem;border-radius:999px;font-weight:600;text-decoration:none;border:1.5px solid var(--edge);background:var(--glass);transition:transform .25s cubic-bezier(.2,1.6,.4,1),box-shadow .25s}
+.btn{display:inline-block;padding:.9rem 1.6rem;border-radius:999px;font-weight:600;text-decoration:none;border:1.5px solid var(--edge);background:var(--glass);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:transform .25s cubic-bezier(.2,1.6,.4,1),box-shadow .25s}
 .btn:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 12px 30px color-mix(in srgb,var(--a) 40%,transparent)}
 .btn.primary{background:linear-gradient(120deg,var(--a),var(--b));border-color:transparent;color:#fff}
 
@@ -103,7 +103,7 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,6vw,3.4rem);l
 
 /* cards */
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.1rem}
-.card{--k:var(--a);position:relative;padding:1.6rem;border-radius:1.5rem;background:var(--glass);border:1.5px solid var(--edge);overflow:hidden;transition:transform .35s cubic-bezier(.2,1.4,.4,1)}
+.card{--k:var(--a);position:relative;padding:1.6rem;border-radius:1.5rem;background:var(--glass);border:1.5px solid var(--edge);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);overflow:hidden;transition:transform .35s cubic-bezier(.2,1.4,.4,1)}
 .card::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--cx,50%) var(--cy,0%),color-mix(in srgb,var(--k) 30%,transparent),transparent 70%);opacity:0;transition:opacity .3s}
 .card:hover{transform:translateY(-8px)}.card:hover::before{opacity:1}
 .card::after{content:"";position:absolute;left:1.6rem;top:0;width:3rem;height:5px;border-radius:0 0 6px 6px;background:var(--k);transition:width .4s}
@@ -124,8 +124,8 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,6vw,3.4rem);l
 .links{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.5rem}
 footer{margin-top:5rem;padding:2rem 0 3rem;color:var(--muted);font-size:.95rem;border-top:1.5px solid var(--edge);position:relative;z-index:1}
 
-.js .rv{opacity:0;translate:0 40px;transition:opacity .8s,translate .8s cubic-bezier(.2,.9,.3,1)}
-.js .rv.in{opacity:1;translate:0 0}
+.js .rv{opacity:0;translate:0 40px;filter:blur(8px);transition:opacity .8s,translate .8s cubic-bezier(.2,.9,.3,1),filter .8s}
+.js .rv.in{opacity:1;translate:0 0;filter:none}
 @media (max-width:760px){
   .hero{grid-template-columns:1fr;gap:3rem;padding-top:1rem}
   .scene{width:min(78%,300px)}
@@ -251,9 +251,8 @@ if(!reduce){
 
 /* cursor light, 3D tilt, letter repel, card glow */
 var root=document.documentElement,tilt=document.getElementById('tilt');
-var fine=matchMedia('(pointer:fine)').matches;
 var letters=[].slice.call(document.querySelectorAll('h1 .l'));
-if(!reduce&&fine){
+if(!reduce){
   addEventListener('pointermove',function(e){
     root.style.setProperty('--mx',e.clientX+'px');root.style.setProperty('--my',e.clientY+'px');
     tilt.style.setProperty('--ry',((e.clientX-innerWidth/2)/innerWidth*40)+'deg');
@@ -272,7 +271,7 @@ if(!reduce&&fine){
 
 /* particle network */
 var cv=document.getElementById('net');
-if(!reduce&&cv.getContext&&fine&&innerWidth>900){
+if(!reduce&&cv.getContext){
   var g=cv.getContext('2d'),W,H,P=[],mx=-999,my=-999;
   var size=function(){W=cv.width=innerWidth;H=cv.height=innerHeight;P=[];
     for(var i=0,n=Math.min(70,Math.round(W/16));i<n;i++)P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.45,vy:(Math.random()-.5)*.45});};
